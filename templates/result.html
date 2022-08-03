@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="col-xs-1" align="center">
+<h1 class="text-primary">{{ info.location.name }}</h1>
+<h2 class="text-primary">{{ info.location.region }}<br>{{ info.location.localtime }}</h2>
+
+<img src= {{ info.current.condition.icon }} width="7%" height="7%">
+<br>
+<h2 class="text-warning">{{ info.current.condition.text }}</h2>
+
+<h3>
+<table class="border-bottom border-dark"  width="32%" >
+  <tr>
+  <th align="left">Temperature:</th>
+  <th class="text-warning">{{ info.current.feelslike_c }} C</th>
+  </tr>
+
+  <tr>
+  <th>Humidity:</th>
+  <th class="text-warning">{{ info.current.humidity }}</th>
+  </tr>
+
+  <tr>
+  <th>Cloud:</th>
+  <th class="text-warning">{{ info.current.cloud }}</th>
+  </tr>
+
+  <tr>
+   <th>UV:</th>
+  <th class="text-warning">{{ info.current.uv }}</th>
+  </tr>
+  <tr>
+    <th>Wind:</th>
+    <th class="text-warning">{{ info.current.wind_kph }} kmph {{ info.current.wind_dir }}</th>
+    </tr>
+
+</table>
+</h3>
+</div>
+
+{% endblock body %} 
